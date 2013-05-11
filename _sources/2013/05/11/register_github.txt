@@ -1,40 +1,108 @@
 GitHubのアカウントを作成する
 ===============================
 
-さて、まだ手持ちのiMac上でしこしこ作成中です。
-最近のナウい技術者っぽく、私もGithubのアカウントを作成し、Pagesでこのブログを公開しようと思います。
+| さて、まだ手持ちのiMac上でしこしこ作成中です。
+| 最近のナウい技術者っぽく、私もGithubのアカウントを作成し、Pagesでこのブログを公開しようと思います。
+| と、その前に、、、
 
-その前に、、、
+**Gitをいれる**
+ 
+| Gitが入っていなかったので入れておきます。
+| Macportsが入っていますので、それを使います。
 
-* Gitをいれる
-     Gitが入っていなかったので入れておきます。
-     Macportsが入っていますので、それを使います。
-	 :: 
+:: 
 
      sudo port install git-core
 
-これで入ってくれましたぁ。
 
-ついでに、MacPortsの更新もしました。
+| これで入ってくれましたぁ。
 
-というのも、こんなこと言われたんですよねえ。
+**MacPortsの更新**
+
+| ついでに、MacPortsの更新もしました。
+| というのも、こんなこと言われたんですよねえ。
+
 :: 
 
-Warning: port definitions are more than two weeks old, consider using selfupdate
+     Warning: port definitions are more than two weeks old, consider using selfupdate
 
-コマンドは調べて以下を入力しました。 :: 
 
-sudo port -d selfupdate
-sudo port upgrade outdated
-sudo port upgrade installed
+コマンドは調べて以下を入力しました。
+::  
 
-これでOK！
-GitHubのアカウントは、以下を入力したらすんなりいきました。
+     sudo port -d selfupdate
+     sudo port upgrade outdated
+     sudo port upgrade installed
+
+| これでOK！
+
+**GitHubのアカウント作成**
+
+| GitHubのアカウントは、以下を入力したらすんなりいきました。
 
 * username
 * E-mail
 * password
 
+**リポジトリの作成**
+
+| さて、ブログ用のリポジトリ作成と、ローカルで作ったhtmlファイル達をpushします。
+| まず、リポジトリの作成は、ブラウザ上でやりました。
+
+**htmlファイルの追加**
+
+次にリポジトリをローカルディレクトリにcloneします。
+:: 
+
+     git clone git@github.com:nidena/nidena.github.com.git
+
+| その後、標準では Jekyll サポートのため _ (underscore) から始まるディレクトリを使用できません。
+| このままだと困るので Jekyll サポートを無効化するためのファイルを作成します。
+
+:: 
+
+     cd nidena.github.com/
+     touch .nojekyll
+
+| htmlファイルをリポジトリ下に持ってきます。
+| そして、addしてcommitしてpushしたら完了のはずが、、、
+
+:: 
+
+     rsync -av <myBlogディレクトリ>/blog/html/ .
+     git add .
+     git commit -m "First commit of blog contents."
+     git push origin mastar
+
+エラーになりました。。。
+
+:: 
+
+     error: src refspec mastar does not match any.
+     error: failed to push some refs to 'git@github.com:nidena/nidena.github.com.git'
+
+すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。
+
+::
+
+     git config --global user.name "nidena"
+     git config --global user.email naoking504@gmail.com
+
+| で、この時思いつきました。
+| 「そうだ、README作れと言ってた！」
+| とゆーわけで、空ファイルのREADMEを追加しました。
+
+:: 
+
+     touch README.md
+     git add README.md
+     git commit -m "add readme"
+
+その後、pushするとうまくいきましたぁ！！
+
+:: 
+
+     git push -u origin mastar
 
 
 .. author:: default
