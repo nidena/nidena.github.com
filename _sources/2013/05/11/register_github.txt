@@ -1,0 +1,43 @@
+GitHubのアカウントを作成する
+===============================
+
+さて、まだ手持ちのiMac上でしこしこ作成中です。
+最近のナウい技術者っぽく、私もGithubのアカウントを作成し、Pagesでこのブログを公開しようと思います。
+
+その前に、、、
+
+* Gitをいれる
+     Gitが入っていなかったので入れておきます。
+     Macportsが入っていますので、それを使います。
+	 :: 
+
+     sudo port install git-core
+
+これで入ってくれましたぁ。
+
+ついでに、MacPortsの更新もしました。
+
+というのも、こんなこと言われたんですよねえ。
+:: 
+
+Warning: port definitions are more than two weeks old, consider using selfupdate
+
+コマンドは調べて以下を入力しました。 :: 
+
+sudo port -d selfupdate
+sudo port upgrade outdated
+sudo port upgrade installed
+
+これでOK！
+GitHubのアカウントは、以下を入力したらすんなりいきました。
+
+* username
+* E-mail
+* password
+
+
+
+.. author:: default
+.. categories:: none
+.. tags:: none
+.. comments::

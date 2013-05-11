@@ -1,0 +1,20 @@
+最初の第一歩
+============
+
+初めまして。
+
+これからここで色々と書いていこうと思います。
+
+とりあえず、以下の機能を実装してみるつもりです。
+
+* フェイスブックコメントの追加
+	参考：`An Artisan's Build Act <http://akirakw.github.io/2012/09/13/customize_tinkerer.html>`_
+* zenbackの関連記事
+
+できたら記事にしますねー
+
+
+.. author:: default
+.. categories:: none
+.. tags:: none
+.. comments::

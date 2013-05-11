@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>nidenaノート</title>
+        <link>http://127.0.0.1/blog/html/</link>
+        <description>思考、アイデアとの出会いは一期一会。だから残しておかねば。</description>
+        <language>en-us</language>
+        <pubDate>Sat, 11 May 2013 00:00:00 +0900</pubDate>
+        
+        <item>
+            <link>http://127.0.0.1/blog/html/2013/05/11/automake.html</link>
+            <guid>http://127.0.0.1/blog/html/2013/05/11/automake.html</guid>
+            <title><![CDATA[Tinkererで定期的にビルドする]]></title>
+            <description><![CDATA[<div class="section" id="tinkerer">
+<h1>Tinkererで定期的にビルドする</h1>
+<p>仕事でSphinxを使い始めたわけなんですが、実は毎回make htmlするのが結構だるいんですよね(^_^;)</p>
+<p>というわけで、サクラエディタにrstファイルを更新すると自動的にmakeする機能を探し出してつけてみたらこれがすごい！！</p>
+<p>チョーー楽だったので、家のmacでもTinkererでブログ書くときは取り入れたいなと思っていたのでした。</p>
+<p>調べてみると、watchコマンドを入れたらええやん！ということが分かったんですが、Macには標準で入っていない。。。</p>
+<p>なので、もうシェルスクリプトでも書いてやれ！と思ってたら、すでに書いている人がいましたので拝借☆</p>
+<p><a class="reference external" href="http://d.hatena.ne.jp/NeoCat/20070510/1180896988">watchコマンドの代わりになるシェルスクリプト</a></p>
+<p>これはzshだったので、bashにちょろっと書き換えました。
+後は、ブログ作業用ディレクトリで、</p>
+<div class="highlight-python"><pre>watch tinker -b</pre>
+</div>
+<p>これだけ。nオプションでコマンド実行間隔を指定できます。</p>
+<p>いい感じに環境が整ってきました(笑)</p>
+</div>]]></description>
+             <pubDate>Sat, 11 May 2013 00:00:00 +0900</pubDate>
+        </item>
+    
+        <item>
+            <link>http://127.0.0.1/blog/html/2013/05/11/register_github.html</link>
+            <guid>http://127.0.0.1/blog/html/2013/05/11/register_github.html</guid>
+            <title><![CDATA[GitHubのアカウントを作成する]]></title>
+            <description><![CDATA[<div class="section" id="github">
+<h1>GitHubのアカウントを作成する</h1>
+<p>さて、まだ手持ちのiMac上でしこしこ作成中です。
+最近のナウい技術者っぽく、私もGithubのアカウントを作成し、Pagesでこのブログを公開しようと思います。</p>
+<p>その前に、、、</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Gitをいれる</dt>
+<dd><p class="first">Gitが入っていなかったので入れておきます。
+Macportsが入っていますので、それを使います。</p>
+<blockquote>
+<div/></blockquote>
+<p class="last">sudo port install git-core</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>これで入ってくれましたぁ。</p>
+<p>ついでに、MacPortsの更新もしました。</p>
+<p>というのも、こんなこと言われたんですよねえ。</p>
+<p>Warning: port definitions are more than two weeks old, consider using selfupdate</p>
+<p>コマンドは調べて以下を入力しました。</p>
+<p>sudo port -d selfupdate
+sudo port upgrade outdated
+sudo port upgrade installed</p>
+<p>これでOK！
+GitHubのアカウントは、以下を入力したらすんなりいきました。</p>
+<ul class="simple">
+<li>username</li>
+<li>E-mail</li>
+<li>password</li>
+</ul>
+</div>]]></description>
+             <pubDate>Sat, 11 May 2013 00:00:00 +0900</pubDate>
+        </item>
+    
+        <item>
+            <link>http://127.0.0.1/blog/html/2013/04/29/first_post.html</link>
+            <guid>http://127.0.0.1/blog/html/2013/04/29/first_post.html</guid>
+            <title><![CDATA[最初の第一歩]]></title>
+            <description><![CDATA[<div class="section" id="id1">
+<h1>最初の第一歩</h1>
+<p>初めまして。</p>
+<p>これからここで色々と書いていこうと思います。</p>
+<p>とりあえず、以下の機能を実装してみるつもりです。</p>
+<ul>
+<li><dl class="first docutils">
+<dt>フェイスブックコメントの追加</dt>
+<dd><p class="first last">参考：<a class="reference external" href="http://akirakw.github.io/2012/09/13/customize_tinkerer.html">An Artisan’s Build Act</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">zenbackの関連記事</p>
+</li>
+</ul>
+<p>できたら記事にしますねー</p>
+</div>]]></description>
+             <pubDate>Mon, 29 Apr 2013 00:00:00 +0900</pubDate>
+        </item>
+    
+    </channel>
+</rss>
