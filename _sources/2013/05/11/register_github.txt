@@ -13,6 +13,7 @@ Gitをいれる
 | 
 
 .. highlight:: bash
+
 :: 
 
      sudo port install git-core
@@ -28,6 +29,7 @@ MacPortsの更新
 | 
 
 .. highlight:: bash
+
 :: 
 
      Warning: port definitions are more than two weeks old, consider using selfupdate
@@ -37,6 +39,7 @@ MacPortsの更新
 | 
 
 .. highlight:: bash
+
 ::  
 
      sudo port -d selfupdate
@@ -68,6 +71,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      git clone git@github.com:nidena/nidena.github.com.git
@@ -78,6 +82,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      cd nidena.github.com/
@@ -89,6 +94,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      rsync -av <myBlogディレクトリ>/blog/html/ .
@@ -101,6 +107,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      error: src refspec mastar does not match any.
@@ -111,6 +118,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 ::
 
      git config --global user.name "nidena"
@@ -123,6 +131,7 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      touch README.md
@@ -134,10 +143,12 @@ htmlファイルの追加
 | 
 
 .. highlight:: bash
+
 :: 
 
      git push -u origin mastar
 
+(最終更新日：|today|)
 
 .. author:: default
 .. categories:: none

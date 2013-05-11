@@ -13,6 +13,8 @@
 
 できたら記事にしますねー
 
+(最終更新日：|today|)
+
 
 .. author:: default
 .. categories:: none
