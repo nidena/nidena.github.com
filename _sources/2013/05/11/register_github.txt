@@ -10,12 +10,14 @@ Gitをいれる
  
 | Gitが入っていなかったので入れておきます。
 | Macportsが入っていますので、それを使います。
+| 
 
+.. highlight:: bash
 :: 
 
      sudo port install git-core
 
-
+| 
 | これで入ってくれましたぁ。
 
 MacPortsの更新
@@ -23,19 +25,25 @@ MacPortsの更新
 
 | ついでに、MacPortsの更新もしました。
 | というのも、こんなこと言われたんですよねえ。
+| 
 
+.. highlight:: bash
 :: 
 
      Warning: port definitions are more than two weeks old, consider using selfupdate
 
+| 
+| コマンドは調べて以下を入力しました。
+| 
 
-コマンドは調べて以下を入力しました。
+.. highlight:: bash
 ::  
 
      sudo port -d selfupdate
      sudo port upgrade outdated
      sudo port upgrade installed
 
+| 
 | これでOK！
 
 GitHubのアカウント作成
@@ -56,22 +64,31 @@ GitHubのアカウント作成
 htmlファイルの追加
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-次にリポジトリをローカルディレクトリにcloneします。
+| 次にリポジトリをローカルディレクトリにcloneします。
+| 
+
+.. highlight:: bash
 :: 
 
      git clone git@github.com:nidena/nidena.github.com.git
 
+| 
 | その後、標準では Jekyll サポートのため _ (underscore) から始まるディレクトリを使用できません。
 | このままだと困るので Jekyll サポートを無効化するためのファイルを作成します。
+| 
 
+.. highlight:: bash
 :: 
 
      cd nidena.github.com/
      touch .nojekyll
 
+| 
 | htmlファイルをリポジトリ下に持ってきます。
 | そして、addしてcommitしてpushしたら完了のはずが、、、
+| 
 
+.. highlight:: bash
 :: 
 
      rsync -av <myBlogディレクトリ>/blog/html/ .
@@ -79,32 +96,44 @@ htmlファイルの追加
      git commit -m "First commit of blog contents."
      git push origin mastar
 
-エラーになりました。。。
+| 
+| エラーになりました。。。
+| 
 
+.. highlight:: bash
 :: 
 
      error: src refspec mastar does not match any.
      error: failed to push some refs to 'git@github.com:nidena/nidena.github.com.git'
 
-すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。
+| 
+| すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。
+| 
 
+.. highlight:: bash
 ::
 
      git config --global user.name "nidena"
      git config --global user.email naoking504@gmail.com
 
+| 
 | で、この時思いつきました。
 | 「そうだ、README作れと言ってた！」
 | とゆーわけで、空ファイルのREADMEを追加しました。
+| 
 
+.. highlight:: bash
 :: 
 
      touch README.md
      git add README.md
      git commit -m "add readme"
 
-その後、pushするとうまくいきましたぁ！！
+| 
+| その後、pushするとうまくいきましたぁ！！
+| 
 
+.. highlight:: bash
 :: 
 
      git push -u origin mastar

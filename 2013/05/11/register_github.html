@@ -92,10 +92,13 @@
 <div class="line-block">
 <div class="line">Gitが入っていなかったので入れておきます。</div>
 <div class="line">Macportsが入っていますので、それを使います。</div>
+<div class="line"><br /></div>
 </div>
-<div class="highlight-python"><pre>sudo port install git-core</pre>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install git-core
+</pre></div>
 </div>
 <div class="line-block">
+<div class="line"><br /></div>
 <div class="line">これで入ってくれましたぁ。</div>
 </div>
 </div>
@@ -104,15 +107,23 @@
 <div class="line-block">
 <div class="line">ついでに、MacPortsの更新もしました。</div>
 <div class="line">というのも、こんなこと言われたんですよねえ。</div>
+<div class="line"><br /></div>
 </div>
-<div class="highlight-python"><pre>Warning: port definitions are more than two weeks old, consider using selfupdate</pre>
-</div>
-<p>コマンドは調べて以下を入力しました。</p>
-<div class="highlight-python"><pre>sudo port -d selfupdate
-sudo port upgrade outdated
-sudo port upgrade installed</pre>
+<div class="highlight-bash"><div class="highlight"><pre>Warning: port definitions are more than two weeks old, consider using selfupdate
+</pre></div>
 </div>
 <div class="line-block">
+<div class="line"><br /></div>
+<div class="line">コマンドは調べて以下を入力しました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port -d selfupdate
+sudo port upgrade outdated
+sudo port upgrade installed
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 <div class="line">これでOK！</div>
 </div>
 </div>
@@ -136,44 +147,72 @@ sudo port upgrade installed</pre>
 </div>
 <div class="section" id="html">
 <h2>htmlファイルの追加</h2>
-<p>次にリポジトリをローカルディレクトリにcloneします。</p>
-<div class="highlight-python"><pre>git clone git@github.com:nidena/nidena.github.com.git</pre>
+<div class="line-block">
+<div class="line">次にリポジトリをローカルディレクトリにcloneします。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git clone git@github.com:nidena/nidena.github.com.git
+</pre></div>
 </div>
 <div class="line-block">
+<div class="line"><br /></div>
 <div class="line">その後、標準では Jekyll サポートのため _ (underscore) から始まるディレクトリを使用できません。</div>
 <div class="line">このままだと困るので Jekyll サポートを無効化するためのファイルを作成します。</div>
+<div class="line"><br /></div>
 </div>
-<div class="highlight-python"><pre>cd nidena.github.com/
-touch .nojekyll</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>nidena.github.com/
+touch .nojekyll
+</pre></div>
 </div>
 <div class="line-block">
+<div class="line"><br /></div>
 <div class="line">htmlファイルをリポジトリ下に持ってきます。</div>
 <div class="line">そして、addしてcommitしてpushしたら完了のはずが、、、</div>
+<div class="line"><br /></div>
 </div>
-<div class="highlight-python"><pre>rsync -av &lt;myBlogディレクトリ&gt;/blog/html/ .
+<div class="highlight-bash"><div class="highlight"><pre>rsync -av &lt;myBlogディレクトリ&gt;/blog/html/ .
 git add .
-git commit -m "First commit of blog contents."
-git push origin mastar</pre>
-</div>
-<p>エラーになりました。。。</p>
-<div class="highlight-python"><pre>error: src refspec mastar does not match any.
-error: failed to push some refs to 'git@github.com:nidena/nidena.github.com.git'</pre>
-</div>
-<p>すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。</p>
-<div class="highlight-python"><pre>git config --global user.name "nidena"
-git config --global user.email naoking504@gmail.com</pre>
+git commit -m <span class="s2">&quot;First commit of blog contents.&quot;</span>
+git push origin mastar
+</pre></div>
 </div>
 <div class="line-block">
+<div class="line"><br /></div>
+<div class="line">エラーになりました。。。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>error: src refspec mastar does not match any.
+error: failed to push some refs to <span class="s1">&#39;git@github.com:nidena/nidena.github.com.git&#39;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git config --global user.name <span class="s2">&quot;nidena&quot;</span>
+git config --global user.email naoking504@gmail.com
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 <div class="line">で、この時思いつきました。</div>
 <div class="line">「そうだ、README作れと言ってた！」</div>
 <div class="line">とゆーわけで、空ファイルのREADMEを追加しました。</div>
+<div class="line"><br /></div>
 </div>
-<div class="highlight-python"><pre>touch README.md
+<div class="highlight-bash"><div class="highlight"><pre>touch README.md
 git add README.md
-git commit -m "add readme"</pre>
+git commit -m <span class="s2">&quot;add readme&quot;</span>
+</pre></div>
 </div>
-<p>その後、pushするとうまくいきましたぁ！！</p>
-<div class="highlight-python"><pre>git push -u origin mastar</pre>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">その後、pushするとうまくいきましたぁ！！</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git push -u origin mastar
+</pre></div>
 </div>
 </div>
 </div>
