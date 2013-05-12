@@ -1,0 +1,53 @@
+フェイスブックのコメント機能を組み込む
+===========================================================
+
+さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。
+
+まずは、コメント機能の組み込みです。
+
+参考：`Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法 <http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html>`_
+
+| どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。
+| そのためには、bitbucketのアカウントを作成する必要がありました。
+
+
+| 
+| とその前に、私の場合はmercurialをまずインストールしました。
+| 
+
+.. highlight:: bash
+
+::
+
+   sudo port install mercurial
+
+| 
+| 続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。
+| そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。
+| 
+
+.. highlight:: bash
+
+::
+
+   cd Work
+   mkdir hg_repos
+   cd hg_repos
+   hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+
+| 
+| あとは参考にした記事通りに行ないました。
+| 
+
+.. highlight:: bash
+
+::
+
+   mkdir -p <myblogディレクトリ>/_exts
+
+
+
+.. author:: default
+.. categories:: none
+.. tags:: none
+.. comments::

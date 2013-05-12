@@ -4,6 +4,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/05/12/add_facebook_comments
    2013/05/11/automake
    2013/05/11/register_github
    2013/04/29/first_post

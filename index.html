@@ -35,7 +35,9 @@
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
-    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script>
+    </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="_static/fb.js"></script>
+    <meta property="fb:app_id" content="524631427582527"/>
+       
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -55,7 +57,8 @@
                 $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
             }
         });
-    </script></head>
+    </script>
+</head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -75,6 +78,55 @@
                 </li>
               </ul>
           </nav><div class="main-container"><div class="main wrapper clearfix"><article><div class="timestamp postmeta">
+            <span>2013/05/12</span>
+        </div>
+        <div class="section" id="id1">
+<h1><a href="2013/05/12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a></h1>
+<p>さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。</p>
+<p>まずは、コメント機能の組み込みです。</p>
+<p>参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html">Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法</a></p>
+<div class="line-block">
+<div class="line">どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。</div>
+<div class="line">そのためには、bitbucketのアカウントを作成する必要がありました。</div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">とその前に、私の場合はmercurialをまずインストールしました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install mercurial
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。</div>
+<div class="line">そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>Work
+mkdir hg_repos
+<span class="nb">cd </span>hg_repos
+hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">あとは参考にした記事通りに行ないました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir -p &lt;myblogディレクトリ&gt;/_exts
+</pre></div>
+</div>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        
+        
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/12/add_facebook_comments.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/12/add_facebook_comments.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>2013/05/11</span>
         </div>
         <div class="section" id="tinkerer">
@@ -115,7 +167,9 @@
         </div>
         
         
-        </div><div class="separator post_separator"></div><div class="timestamp postmeta">
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/11/automake.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/automake.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>2013/05/11</span>
         </div>
         <div class="section" id="github">
@@ -261,7 +315,9 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
         </div>
         
         
-        </div><div class="separator post_separator"></div><div class="timestamp postmeta">
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/11/register_github.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/register_github.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>2013/04/29</span>
         </div>
         <div class="section" id="id1">
@@ -288,11 +344,15 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
         </div>
         
         
-        </div><div class="archive_link">
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/04/29/first_post.html#comments"><fb:comments-count href="http://nidena.github.io/2013/04/29/first_post.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="archive_link">
         <a href="archive.html"> &mdash;  Blog Archive  &mdash; </a>
     </div></article><aside class="sidebar"><section><div class="widget">
     <h1>最近の投稿</h1>
     <ul><li>
+            <a href="2013/05/12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a>
+        </li><li>
             <a href="2013/05/11/automake.html">Tinkererで定期的にビルドする</a>
         </li><li>
             <a href="2013/05/11/register_github.html">GitHubのアカウントを作成する</a>

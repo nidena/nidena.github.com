@@ -15,7 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="This is an awesome blog">
         <meta name="viewport" content="width=device-width">
-        <title>最初の第一歩 &mdash; nidenaノート</title>
+        <title>フェイスブックのコメント機能を組み込む &mdash; nidenaノート</title>
             <link rel="stylesheet" href="../../../_static/normalize.css" type="text/css">
             <link rel="stylesheet" href="../../../_static/main.css" type="text/css">
             <link rel="stylesheet" href="../../../_static/modern5.css" type="text/css">
@@ -27,7 +27,7 @@
         <script>window.jQuery || document.write('<script src="../../../_static/vendor/jquery-1.8.2.min.js"><\/script>')</script>
         <script src="../../../_static/plugins.js"></script>
         <script src="../../../_static/main.js"></script>
-        <link rel="prev" title="GitHubのアカウントを作成する" href="../../05/11/register_github.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.html" /><script type="text/javascript">
+        <link rel="next" title="Tinkererで定期的にビルドする" href="../11/automake.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.html" /><script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
         VERSION:     '1.1',
@@ -78,28 +78,48 @@
                 </li>
               </ul>
           </nav><div class="main-container"><div class="main wrapper clearfix"><article><ul class="related clearfix">
-            <li class="left"> &laquo; <a href="../../05/11/register_github.html">GitHubのアカウントを作成する</a></li>
-            <li class="right"></li>
+            <li class="left"></li>
+            <li class="right"><a href="../11/automake.html">Tinkererで定期的にビルドする</a> &raquo; </li>
         </ul><div class="timestamp postmeta">
-            <span>2013/04/29</span>
+            <span>2013/05/12</span>
         </div>
     <div class="section" id="id1">
-<h1>最初の第一歩</h1>
-<p>初めまして。</p>
-<p>これからここで色々と書いていこうと思います。</p>
-<p>とりあえず、以下の機能を実装してみるつもりです。</p>
-<ul>
-<li><dl class="first docutils">
-<dt>フェイスブックコメントの追加</dt>
-<dd><p class="first last">参考：<a class="reference external" href="http://akirakw.github.io/2012/09/13/customize_tinkerer.html">An Artisan&#8217;s Build Act</a></p>
-</dd>
-</dl>
-</li>
-<li><p class="first">zenbackの関連記事</p>
-</li>
-</ul>
-<p>できたら記事にしますねー</p>
-<p>(最終更新日：2013/05/12)</p>
+<h1>フェイスブックのコメント機能を組み込む</h1>
+<p>さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。</p>
+<p>まずは、コメント機能の組み込みです。</p>
+<p>参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html">Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法</a></p>
+<div class="line-block">
+<div class="line">どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。</div>
+<div class="line">そのためには、bitbucketのアカウントを作成する必要がありました。</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">とその前に、私の場合はmercurialをまずインストールしました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install mercurial
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。</div>
+<div class="line">そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>Work
+mkdir hg_repos
+<span class="nb">cd </span>hg_repos
+hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">あとは参考にした記事通りに行ないました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir -p &lt;myblogディレクトリ&gt;/_exts
+</pre></div>
+</div>
 </div>
 
     <div class="postmeta">
@@ -109,19 +129,19 @@
         
         
         </div>
-    <div id="comments">   <div class="fb-comments" data-href="http://nidena.github.io/2013/04/29/first_post.html">   </div></div><ul class="related clearfix">
-            <li class="left"> &laquo; <a href="../../05/11/register_github.html">GitHubのアカウントを作成する</a></li>
-            <li class="right"></li>
+    <div id="comments">   <div class="fb-comments" data-href="http://nidena.github.io/2013/05/12/add_facebook_comments.html">   </div></div><ul class="related clearfix">
+            <li class="left"></li>
+            <li class="right"><a href="../11/automake.html">Tinkererで定期的にビルドする</a> &raquo; </li>
         </ul></article><aside class="sidebar"><section><div class="widget">
     <h1>最近の投稿</h1>
     <ul><li>
-            <a href="../../05/12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a>
+            <a href="#">フェイスブックのコメント機能を組み込む</a>
         </li><li>
-            <a href="../../05/11/automake.html">Tinkererで定期的にビルドする</a>
+            <a href="../11/automake.html">Tinkererで定期的にビルドする</a>
         </li><li>
-            <a href="../../05/11/register_github.html">GitHubのアカウントを作成する</a>
+            <a href="../11/register_github.html">GitHubのアカウントを作成する</a>
         </li><li>
-            <a href="#">最初の第一歩</a>
+            <a href="../../04/29/first_post.html">最初の第一歩</a>
         </li></ul>
 </div>
 </section><section><div class="widget" id="searchbox">

@@ -5,8 +5,53 @@
         <link>http://nidena.github.io/</link>
         <description>思考、アイデアとの出会いは一期一会。だから残しておかねば。</description>
         <language>en-us</language>
-        <pubDate>Sat, 11 May 2013 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 12 May 2013 00:00:00 +0900</pubDate>
         
+        <item>
+            <link>http://nidena.github.io/2013/05/12/add_facebook_comments.html</link>
+            <guid>http://nidena.github.io/2013/05/12/add_facebook_comments.html</guid>
+            <title><![CDATA[フェイスブックのコメント機能を組み込む]]></title>
+            <description><![CDATA[<div class="section" id="id1">
+<h1>フェイスブックのコメント機能を組み込む</h1>
+<p>さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。</p>
+<p>まずは、コメント機能の組み込みです。</p>
+<p>参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html">Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法</a></p>
+<div class="line-block">
+<div class="line">どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。</div>
+<div class="line">そのためには、bitbucketのアカウントを作成する必要がありました。</div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">とその前に、私の場合はmercurialをまずインストールしました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install mercurial
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。</div>
+<div class="line">そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>Work
+mkdir hg_repos
+<span class="nb">cd </span>hg_repos
+hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">あとは参考にした記事通りに行ないました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir -p &lt;myblogディレクトリ&gt;/_exts
+</pre></div>
+</div>
+</div>]]></description>
+             <pubDate>Sun, 12 May 2013 00:00:00 +0900</pubDate>
+        </item>
+    
         <item>
             <link>http://nidena.github.io/2013/05/11/automake.html</link>
             <guid>http://nidena.github.io/2013/05/11/automake.html</guid>
