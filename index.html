@@ -78,6 +78,91 @@
                 </li>
               </ul>
           </nav><div class="main-container"><div class="main wrapper clearfix"><article><div class="timestamp postmeta">
+            <span>2013/05/18</span>
+        </div>
+        <div class="section" id="tinkerer">
+<h1><a href="2013/05/18/add_social_button.html">Tinkererブログにソーシャルボタンを設置する</a></h1>
+<p>このブログにソーシャルボタンを設置してみました。</p>
+<ul class="simple">
+<li>ツイッター</li>
+<li>はてぶ</li>
+</ul>
+<p>いずれはFacebookのいいねボタンも追加したいですね。</p>
+<div class="line-block">
+<div class="line">さて、設置方法をまとめます。</div>
+<div class="line">方法は主に以下のサイトを参考にしています。</div>
+<div class="line">参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/29/tinkerer_with_social_button.html">Tinkererで作ったブログにソーシャルボタンを追加する</a></div>
+</div>
+<p>なお、以降記載するコードは、「_templates」ディレクトリ下にpage.htmlを作成してそこに書きました。</p>
+<div class="section" id="id2">
+<h2>ツイッターボタンの設置</h2>
+<p>まずはツイッターのボタンを設置します。</p>
+<p>参考にしたサイトと同じです。</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://twitter.com/about/resources/buttons#tweet">Twitter社の素材ページ</a> でソースコード取得</li>
+<li>page.htmlに記載</li>
+</ol>
+<p>これだけ。</p>
+</div>
+<div class="section" id="id3">
+<h2>はてぶボタンの設置</h2>
+<p>こちらも参考にしたサイトと手順は同じです。</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://b.hatena.ne.jp/guide/bbutton">はてなブックマークボタンの作成・設置について</a> のページでコードを取得</li>
+<li>URLとタイトルの部分をSphinxのグローバル変数に変更</li>
+<li>page.htmlに記載</li>
+</ol>
+<p>こんな感じです。</p>
+</div>
+<div class="section" id="page-html">
+<h2>page.htmlへの記載</h2>
+<div class="line-block">
+<div class="line">実は書き留めておきたかったのはこれです。</div>
+<div class="line"><br/></div>
+<div class="line">コードの取得はなんてことないんですが、このpage.htmlへの記載方法がよく分かりませんでした。</div>
+<div class="line">というか、そもそも中括弧で囲まれたコードが何のやつなのか分かってませんし(^_^;)</div>
+<div class="line">結局、今はこんな感じでうまく動いています。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">{</span>% extends <span class="s2">&quot;!page.html&quot;</span> %<span class="o">}</span>
+
+<span class="o">{</span>%- block extrahead %<span class="o">}</span>
+   <span class="o">[</span>Facebookのコメント設置用のメタタグ<span class="o">]</span>
+     <span class="o">{{</span> super<span class="o">()</span> <span class="o">}}</span>
+<span class="o">{</span>% endblock %<span class="o">}</span>
+<span class="o">{</span>% block body %<span class="o">}</span>
+   <span class="o">[</span>はてブボタンのコード<span class="o">]</span>
+   <span class="o">[</span>ツイッターボタンのコード<span class="o">]</span>
+<span class="o">{</span>% endblock %<span class="o">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">ネットで色々見てみたところ、Tinkererってjinja２というテンプレートエンジンを使ってるんですね。</div>
+<div class="line">そんなことさえ知らなくてもどうにかなってますが(笑)</div>
+<div class="line">とはいえ、今はpage.rstというファイルが_templates下に最初からあるので、これを使うのがスマートなやり方なのかなあなんて思いますが、よく分かりません。</div>
+<div class="line">こういった細かい疑問点は、使う中で解消していきたいですね！</div>
+<div class="line"><br/></div>
+</div>
+</div>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        <div class="categories">
+            <span>
+                カテゴリー:
+                <a href="categories/tinkerer.html">Tinkerer</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                タグ:
+                <a href="tags/tinkerer.html">Tinkerer</a>, <a href="tags/______.html">カスタマイズ</a></span>
+        </div>
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/18/add_social_button.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/18/add_social_button.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
             <span>2013/05/12</span>
         </div>
         <div class="section" id="id1">
@@ -360,6 +445,8 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
     </div></article><aside class="sidebar"><section><div class="widget">
     <h1>最近の投稿</h1>
     <ul><li>
+            <a href="2013/05/18/add_social_button.html">Tinkererブログにソーシャルボタンを設置する</a>
+        </li><li>
             <a href="2013/05/12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a>
         </li><li>
             <a href="2013/05/11/automake.html">Tinkererで定期的にビルドする</a>
@@ -371,7 +458,7 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
 </div>
 </section><section><div class="widget">
     <h1>カテゴリー</h1>
-    <ul><li><a href="categories/tinkerer.html">Tinkerer</a> (1)</li></ul>
+    <ul><li><a href="categories/tinkerer.html">Tinkerer</a> (2)</li></ul>
 </div></section><section><div class="widget" id="searchbox">
     <h1>Search</h1>
     <form action="search.html" method="get">
