@@ -37,27 +37,7 @@
       };
     </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/fb.js"></script>
     <meta property="fb:admins" content="100003132962167"/>
-       
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Adjusts document height if sidebar is taller
-            var documentwrapper = document.getElementsByTagName("article")[0];
-            var sidebar = document.getElementsByClassName("sidebar")[0];
-
-            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
-            {
-                var mainwrapper = document.getElementsByClassName("main")[0];
-                documentwrapper.style.minHeight = mainwrapper.offsetHeight + "px";
-            }
-
-            // Scroll to content if on small screen
-            if (screen.width < 480)
-            {
-                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
-            }
-        });
-    </script>
+      
 </head>
     <body>
         <!--[if lt IE 7]>
@@ -84,7 +64,61 @@
 <a href="http://b.hatena.ne.jp/entry/http://nidena.github.io/2013/05/12/add_facebook_comments.html" class="hatena-bookmark-button" data-hatena-bookmark-title="フェイスブックのコメント機能を組み込む" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div class="timestamp postmeta">
+            <span>2013/05/12</span>
+        </div>
+    <div class="section" id="id1">
+<h1>フェイスブックのコメント機能を組み込む</h1>
+<p>さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。</p>
+<p>まずは、コメント機能の組み込みです。</p>
+<p>参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html">Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法</a></p>
+<div class="line-block">
+<div class="line">どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。</div>
+<div class="line">そのためには、bitbucketのアカウントを作成する必要がありました。</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">とその前に、私の場合はmercurialをまずインストールしました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install mercurial
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。</div>
+<div class="line">そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>Work
+mkdir hg_repos
+<span class="nb">cd </span>hg_repos
+hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">あとは参考にした記事通りに行ないました。</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir -p &lt;myblogディレクトリ&gt;/_exts
+</pre></div>
+</div>
+<p>〜以下略〜</p>
+<div class="line-block">
+<div class="line">ただし、フェイスブックのアプリケーションIDを使った組み込みには失敗しまして、私のフェイスブックIDを使った方法で組み込みました。</div>
+<div class="line">どうもアプリの設定が良くないみたいですので、改めてチャレンジしてみます！！</div>
+</div>
+</div>
 
+    <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        
+        
+        </div>
+    <div id="comments">   <div class="fb-comments" data-href="http://nidena.github.io/2013/05/12/add_facebook_comments.html">   </div></div>
 <ul class="related clearfix">
             <li class="left"> &laquo; <a href="../18/add_social_button.html">Tinkererブログにソーシャルボタンを設置する</a></li>
             <li class="right"><a href="../11/automake.html">Tinkererで定期的にビルドする</a> &raquo; </li>

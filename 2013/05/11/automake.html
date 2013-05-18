@@ -37,27 +37,7 @@
       };
     </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/fb.js"></script>
     <meta property="fb:admins" content="100003132962167"/>
-       
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Adjusts document height if sidebar is taller
-            var documentwrapper = document.getElementsByTagName("article")[0];
-            var sidebar = document.getElementsByClassName("sidebar")[0];
-
-            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
-            {
-                var mainwrapper = document.getElementsByClassName("main")[0];
-                documentwrapper.style.minHeight = mainwrapper.offsetHeight + "px";
-            }
-
-            // Scroll to content if on small screen
-            if (screen.width < 480)
-            {
-                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
-            }
-        });
-    </script>
+      
 </head>
     <body>
         <!--[if lt IE 7]>
@@ -84,7 +64,54 @@
 <a href="http://b.hatena.ne.jp/entry/http://nidena.github.io/2013/05/11/automake.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Tinkererで定期的にビルドする" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div class="timestamp postmeta">
+            <span>2013/05/11</span>
+        </div>
+    <div class="section" id="tinkerer">
+<h1>Tinkererで定期的にビルドする</h1>
+<p>仕事でSphinxを使い始めたわけなんですが、実は毎回make htmlするのが結構だるいんですよね(^_^;)</p>
+<div class="line-block">
+<div class="line">というわけで、どうにか楽にしてくれる方法がないかと思って探してみたところ、、、</div>
+<div class="line">サクラエディタで、rstファイルを更新すると自動的にmakeするマクロがネット上に転がってました。</div>
+<div class="line">これを試してみたら、、、すごい！！</div>
+</div>
+<p><strong>チョーー楽</strong> だったので、家のmacでもTinkererでブログ書くときは取り入れたいなと思っていたのでした。</p>
+<div class="line-block">
+<div class="line">調べてみると、watchコマンドを入れたらええやん！ということが分かったんです。</div>
+<div class="line">が、Macには標準で入っていない。。。</div>
+</div>
+<p>なので、もうシェルスクリプトでも書いてやれ！
+と思ってたら、すでに書いている人がいましたので拝借☆</p>
+<p><a class="reference external" href="http://d.hatena.ne.jp/NeoCat/20070510/1180896988">watchコマンドの代わりになるシェルスクリプト</a></p>
+<div class="line-block">
+<div class="line">これはzshだったので、bashにちょろっと書き換えました。</div>
+<div class="line">後は、ブログ作業用ディレクトリで、</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>watch tinker -b
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">これだけ。</div>
+<div class="line">nオプションでコマンド実行間隔を指定できるつもりでしたが、うまくいってない(笑)</div>
+</div>
+<p>とはいえ、いい感じに環境が整ってきました(笑)</p>
+<p>(最終更新日：2013/05/18)</p>
+</div>
 
+    <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        <div class="categories">
+            <span>
+                カテゴリー:
+                <a href="../../../categories/tinkerer.html">Tinkerer</a></span>
+        </div>
+        
+        </div>
+    <div id="comments">   <div class="fb-comments" data-href="http://nidena.github.io/2013/05/11/automake.html">   </div></div>
 <ul class="related clearfix">
             <li class="left"> &laquo; <a href="../12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a></li>
             <li class="right"><a href="register_github.html">GitHubのアカウントを作成する</a> &raquo; </li>
