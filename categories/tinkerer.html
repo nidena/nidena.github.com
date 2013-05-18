@@ -37,30 +37,27 @@
       };
     </script><script type="text/javascript" src="../_static/underscore.js"></script><script type="text/javascript" src="../_static/doctools.js"></script><script type="text/javascript" src="../_static/fb.js"></script>
     <meta property="fb:admins" content="100003132962167"/>
+       
 
-<div class="archive">
-        <h1>カテゴリー <span class="title_category">Tinkerer</span></h1><div class="year">
-            <h1>2013</h1>
-            <ul><li>
-                    <div class="timestamp postmeta">
-            <span>May 11</span>
-        </div>
-                    <h2><a href="../2013/05/11/automake.html">Tinkererで定期的にビルドする</a></h2>
-                    <div class="postmeta">
-        <div class="author">
-            <span>投稿者 Naoki Idenaga</span>
-        </div>
-        <div class="categories">
-            <span>
-                カテゴリー:
-                <a href="#">Tinkerer</a></span>
-        </div>
-        
-        <div class="comments">
-            <a href="http://nidena.github.io/2013/05/11/automake.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/automake.html"></fb:comments-count> comment(s)</a>
-        </div></div>
-                </li></ul>
-        </div></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Adjusts document height if sidebar is taller
+            var documentwrapper = document.getElementsByTagName("article")[0];
+            var sidebar = document.getElementsByClassName("sidebar")[0];
+
+            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
+            {
+                var mainwrapper = document.getElementsByClassName("main")[0];
+                documentwrapper.style.minHeight = mainwrapper.offsetHeight + "px";
+            }
+
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
+            }
+        });
+    </script>
 </head>
     <body>
         <!--[if lt IE 7]>
