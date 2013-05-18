@@ -38,6 +38,6 @@ Tinkererで定期的にビルドする
 (最終更新日：|today|)
 
 .. author:: default
-.. categories:: none
+.. categories:: Tinkerer
 .. tags:: none
 .. comments::

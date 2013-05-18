@@ -37,47 +37,8 @@
       };
     </script><script type="text/javascript" src="_static/underscore.js"></script><script type="text/javascript" src="_static/doctools.js"></script><script type="text/javascript" src="_static/fb.js"></script>
     <meta property="fb:admins" content="100003132962167"/>
-       
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Adjusts document height if sidebar is taller
-            var documentwrapper = document.getElementsByTagName("article")[0];
-            var sidebar = document.getElementsByClassName("sidebar")[0];
-
-            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
-            {
-                var mainwrapper = document.getElementsByClassName("main")[0];
-                documentwrapper.style.minHeight = mainwrapper.offsetHeight + "px";
-            }
-
-            // Scroll to content if on small screen
-            if (screen.width < 480)
-            {
-                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
-            }
-        });
-    </script>
-</head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-      <div id="container"><header>
-            <hgroup>
-              <h1><a href="#">nidenaノート</a></h1>
-              <h2>思考、アイデアとの出会いは一期一会。だから残しておかねば。</h2>
-            </hgroup>
-          </header>
-      <nav>
-            <ul><li class="quicklink"><div class="rss">
-        <a href="rss.html" title="Subscribe via RSS"><span class="webfont">B</span></a>
-    </div></li><li class="main-nav">
-                  <a href="#">ホーム</a>
-                </li>
-              </ul>
-          </nav><div class="main-container"><div class="main wrapper clearfix"><article><div class="timestamp postmeta">
+<div class="timestamp postmeta">
             <span>2013/05/12</span>
         </div>
         <div class="section" id="id1">
@@ -164,13 +125,17 @@ hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
 <div class="line">nオプションでコマンド実行間隔を指定できるつもりでしたが、うまくいってない(笑)</div>
 </div>
 <p>とはいえ、いい感じに環境が整ってきました(笑)</p>
-<p>(最終更新日：2013/05/13)</p>
+<p>(最終更新日：2013/05/18)</p>
 </div>
         <div class="postmeta">
         <div class="author">
             <span>投稿者 Naoki Idenaga</span>
         </div>
-        
+        <div class="categories">
+            <span>
+                カテゴリー:
+                <a href="categories/tinkerer.html">Tinkerer</a></span>
+        </div>
         
         <div class="comments">
             <a href="http://nidena.github.io/2013/05/11/automake.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/automake.html"></fb:comments-count> comment(s)</a>
@@ -311,7 +276,7 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
 <div class="highlight-bash"><div class="highlight"><pre>git push -u origin mastar
 </pre></div>
 </div>
-<p>(最終更新日：2013/05/13)</p>
+<p>(最終更新日：2013/05/18)</p>
 </div>
 </div>
         <div class="postmeta">
@@ -341,7 +306,307 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
 </li>
 </ul>
 <p>できたら記事にしますねー</p>
-<p>(最終更新日：2013/05/13)</p>
+<p>(最終更新日：2013/05/18)</p>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        
+        
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/04/29/first_post.html#comments"><fb:comments-count href="http://nidena.github.io/2013/04/29/first_post.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="archive_link">
+        <a href="archive.html"> &mdash;  Blog Archive  &mdash; </a>
+    </div>
+</head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div id="container"><header>
+            <hgroup>
+              <h1><a href="#">nidenaノート</a></h1>
+              <h2>思考、アイデアとの出会いは一期一会。だから残しておかねば。</h2>
+            </hgroup>
+          </header>
+      <nav>
+            <ul><li class="quicklink"><div class="rss">
+        <a href="rss.html" title="Subscribe via RSS"><span class="webfont">B</span></a>
+    </div></li><li class="main-nav">
+                  <a href="#">ホーム</a>
+                </li>
+              </ul>
+          </nav><div class="main-container"><div class="main wrapper clearfix"><article><div class="timestamp postmeta">
+            <span>2013/05/12</span>
+        </div>
+        <div class="section" id="id1">
+<h1><a href="2013/05/12/add_facebook_comments.html">フェイスブックのコメント機能を組み込む</a></h1>
+<p>さて、無事にGitHub上にブログを公開することが出来ましたので、次はカスタマイズをがつがつやっていきます。</p>
+<p>まずは、コメント機能の組み込みです。</p>
+<p>参考：<a class="reference external" href="http://te2uma.com/blog/2013/03/26/install_fbcomments_to_tinkerer.html">Tinkerer 1.1以降でFacebookのコメントプラグインを組み込む方法</a></p>
+<div class="line-block">
+<div class="line">どうやら、Tinkererの現バージョンから方法が変わったみたいです。bitbucketにあるtinkerer-contribを取得する必要があります。</div>
+<div class="line">そのためには、bitbucketのアカウントを作成する必要がありました。</div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">とその前に、私の場合はmercurialをまずインストールしました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install mercurial
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">続いて、bitbucketのアカウント作成ですが、GitHubのアカウントを使って行ないました。</div>
+<div class="line">そうすると、GitHubで用意したSSH鍵をインポートしてくれて、使えるようになりました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>Work
+mkdir hg_repos
+<span class="nb">cd </span>hg_repos
+hg clone ssh://hg@bitbucket.org/vladris/tinkerer-contrib
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">あとは参考にした記事通りに行ないました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir -p &lt;myblogディレクトリ&gt;/_exts
+</pre></div>
+</div>
+<p>〜以下略〜</p>
+<div class="line-block">
+<div class="line">ただし、フェイスブックのアプリケーションIDを使った組み込みには失敗しまして、私のフェイスブックIDを使った方法で組み込みました。</div>
+<div class="line">どうもアプリの設定が良くないみたいですので、改めてチャレンジしてみます！！</div>
+</div>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        
+        
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/12/add_facebook_comments.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/12/add_facebook_comments.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>2013/05/11</span>
+        </div>
+        <div class="section" id="tinkerer">
+<h1><a href="2013/05/11/automake.html">Tinkererで定期的にビルドする</a></h1>
+<p>仕事でSphinxを使い始めたわけなんですが、実は毎回make htmlするのが結構だるいんですよね(^_^;)</p>
+<div class="line-block">
+<div class="line">というわけで、どうにか楽にしてくれる方法がないかと思って探してみたところ、、、</div>
+<div class="line">サクラエディタで、rstファイルを更新すると自動的にmakeするマクロがネット上に転がってました。</div>
+<div class="line">これを試してみたら、、、すごい！！</div>
+</div>
+<p><strong>チョーー楽</strong> だったので、家のmacでもTinkererでブログ書くときは取り入れたいなと思っていたのでした。</p>
+<div class="line-block">
+<div class="line">調べてみると、watchコマンドを入れたらええやん！ということが分かったんです。</div>
+<div class="line">が、Macには標準で入っていない。。。</div>
+</div>
+<p>なので、もうシェルスクリプトでも書いてやれ！
+と思ってたら、すでに書いている人がいましたので拝借☆</p>
+<p><a class="reference external" href="http://d.hatena.ne.jp/NeoCat/20070510/1180896988">watchコマンドの代わりになるシェルスクリプト</a></p>
+<div class="line-block">
+<div class="line">これはzshだったので、bashにちょろっと書き換えました。</div>
+<div class="line">後は、ブログ作業用ディレクトリで、</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>watch tinker -b
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">これだけ。</div>
+<div class="line">nオプションでコマンド実行間隔を指定できるつもりでしたが、うまくいってない(笑)</div>
+</div>
+<p>とはいえ、いい感じに環境が整ってきました(笑)</p>
+<p>(最終更新日：2013/05/18)</p>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        <div class="categories">
+            <span>
+                カテゴリー:
+                <a href="categories/tinkerer.html">Tinkerer</a></span>
+        </div>
+        
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/11/automake.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/automake.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>2013/05/11</span>
+        </div>
+        <div class="section" id="github">
+<h1><a href="2013/05/11/register_github.html">GitHubのアカウントを作成する</a></h1>
+<div class="line-block">
+<div class="line">さて、まだ手持ちのiMac上でしこしこ作成中です。</div>
+<div class="line">最近のナウい技術者っぽく、私もGithubのアカウントを作成し、Pagesでこのブログを公開しようと思います。</div>
+<div class="line">と、その前に、、、</div>
+</div>
+<div class="section" id="git">
+<h2>Gitをいれる</h2>
+<div class="line-block">
+<div class="line">Gitが入っていなかったので入れておきます。</div>
+<div class="line">Macportsが入っていますので、それを使います。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install git-core
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">これで入ってくれましたぁ。</div>
+</div>
+</div>
+<div class="section" id="macports">
+<h2>MacPortsの更新</h2>
+<div class="line-block">
+<div class="line">ついでに、MacPortsの更新もしました。</div>
+<div class="line">というのも、こんなこと言われたんですよねえ。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>Warning: port definitions are more than two weeks old, consider using selfupdate
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">コマンドは調べて以下を入力しました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port -d selfupdate
+sudo port upgrade outdated
+sudo port upgrade installed
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">これでOK！</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>GitHubのアカウント作成</h2>
+<div class="line-block">
+<div class="line">GitHubのアカウントは、以下を入力したらすんなりいきました。</div>
+</div>
+<ul class="simple">
+<li>username</li>
+<li>E-mail</li>
+<li>password</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>リポジトリの作成</h2>
+<div class="line-block">
+<div class="line">さて、ブログ用のリポジトリ作成と、ローカルで作ったhtmlファイル達をpushします。</div>
+<div class="line">まず、リポジトリの作成は、ブラウザ上でやりました。</div>
+</div>
+</div>
+<div class="section" id="html">
+<h2>htmlファイルの追加</h2>
+<div class="line-block">
+<div class="line">次にリポジトリをローカルディレクトリにcloneします。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git clone git@github.com:nidena/nidena.github.com.git
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">その後、標準では Jekyll サポートのため _ (underscore) から始まるディレクトリを使用できません。</div>
+<div class="line">このままだと困るので Jekyll サポートを無効化するためのファイルを作成します。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>nidena.github.com/
+touch .nojekyll
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">htmlファイルをリポジトリ下に持ってきます。</div>
+<div class="line">そして、addしてcommitしてpushしたら完了のはずが、、、</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>rsync -av &lt;myBlogディレクトリ&gt;/blog/html/ .
+git add .
+git commit -m <span class="s2">&quot;First commit of blog contents.&quot;</span>
+git push origin mastar
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">エラーになりました。。。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>error: src refspec mastar does not match any.
+error: failed to push some refs to <span class="s1">'git@github.com:nidena/nidena.github.com.git'</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">すぐには理由が分からなかったんですが、とりあえずusernameとemailを登録していなかったのでします。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git config --global user.name <span class="s2">&quot;nidena&quot;</span>
+git config --global user.email naoking504@gmail.com
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">で、この時思いつきました。</div>
+<div class="line">「そうだ、README作れと言ってた！」</div>
+<div class="line">とゆーわけで、空ファイルのREADMEを追加しました。</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>touch README.md
+git add README.md
+git commit -m <span class="s2">&quot;add readme&quot;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
+<div class="line">その後、pushするとうまくいきましたぁ！！</div>
+<div class="line"><br/></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>git push -u origin mastar
+</pre></div>
+</div>
+<p>(最終更新日：2013/05/18)</p>
+</div>
+</div>
+        <div class="postmeta">
+        <div class="author">
+            <span>投稿者 Naoki Idenaga</span>
+        </div>
+        
+        
+        <div class="comments">
+            <a href="http://nidena.github.io/2013/05/11/register_github.html#comments"><fb:comments-count href="http://nidena.github.io/2013/05/11/register_github.html"></fb:comments-count> comment(s)</a>
+        </div></div><div class="separator post_separator"></div><div class="timestamp postmeta">
+            <span>2013/04/29</span>
+        </div>
+        <div class="section" id="id1">
+<h1><a href="2013/04/29/first_post.html">最初の第一歩</a></h1>
+<p>初めまして。</p>
+<p>これからここで色々と書いていこうと思います。</p>
+<p>とりあえず、以下の機能を実装してみるつもりです。</p>
+<ul>
+<li><dl class="first docutils">
+<dt>フェイスブックコメントの追加</dt>
+<dd><p class="first last">参考：<a class="reference external" href="http://akirakw.github.io/2012/09/13/customize_tinkerer.html">An Artisan’s Build Act</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">zenbackの関連記事</p>
+</li>
+</ul>
+<p>できたら記事にしますねー</p>
+<p>(最終更新日：2013/05/18)</p>
 </div>
         <div class="postmeta">
         <div class="author">
@@ -365,7 +630,10 @@ git commit -m <span class="s2">&quot;add readme&quot;</span>
             <a href="2013/04/29/first_post.html">最初の第一歩</a>
         </li></ul>
 </div>
-</section><section><div class="widget" id="searchbox">
+</section><section><div class="widget">
+    <h1>カテゴリー</h1>
+    <ul><li><a href="categories/tinkerer.html">Tinkerer</a> (1)</li></ul>
+</div></section><section><div class="widget" id="searchbox">
     <h1>Search</h1>
     <form action="search.html" method="get">
         <input type="text" name="q" />
